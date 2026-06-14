@@ -20,3 +20,19 @@ export interface BudgetState {
   totalBudget: number;
   expenses: Expense[];
 }
+
+export type GuestSide = "mine" | "partner";
+export type RsvpStatus = "pending" | "yes" | "no";
+export type PlusOne = "yes" | "no";
+
+export interface Guest {
+  id: string;
+  name: string;
+  side: GuestSide;
+  rsvpStatus: RsvpStatus;
+  plusOne: PlusOne;
+}
+
+export interface GuestsState {
+  guests: Guest[];
+}
