@@ -4,6 +4,7 @@ import { WEDDING_DATE } from "@/constants/wedding";
 import { useBudget } from "@/hooks/useBudget";
 import { useChecklist } from "@/hooks/useChecklist";
 import { useCountdown } from "@/hooks/useCountdown";
+import { useVendors } from "@/hooks/useVendors";
 
 function formatCurrency(amount: number) {
   return new Intl.NumberFormat("en-US", {
@@ -27,6 +28,7 @@ export function HomePage() {
   const countdown = useCountdown(WEDDING_DATE);
   const { completedCount, totalCount } = useChecklist();
   const { totalSpent, totalBudget } = useBudget();
+  const { bookedCount, totalCount: vendorCount } = useVendors();
 
   return (
     <div className={`flex flex-1 ${HOME_BG_CLASS} ${HOME_TEXT_CLASS} px-6`}>
@@ -55,6 +57,12 @@ export function HomePage() {
             value={formatCurrency(totalSpent)}
             subtitle={`of ${formatCurrency(totalBudget)}`}
             onClick={() => navigate("/budget")}
+          />
+          <SummaryCard
+            label="Vendors"
+            value={`${bookedCount} / ${vendorCount}`}
+            subtitle="booked"
+            onClick={() => navigate("/vendors")}
           />
         </div>
       </div>

@@ -20,3 +20,20 @@ export interface BudgetState {
   totalBudget: number;
   expenses: Expense[];
 }
+
+export type VendorStatus = "researching" | "booked" | "paid";
+
+export interface Vendor {
+  id: string;
+  name: string;
+  category: string;
+  contactPerson: string;
+  phone: string;
+  email: string;
+  notes: string;
+  status: VendorStatus;
+}
+
+export interface VendorsState {
+  vendors: Vendor[];
+}

@@ -3,6 +3,7 @@ import { AppLayout } from "@/layouts/AppLayout";
 import { BudgetPage } from "@/pages/BudgetPage";
 import { ChecklistPage } from "@/pages/ChecklistPage";
 import { HomePage } from "@/pages/HomePage";
+import { VendorsPage } from "@/pages/VendorsPage";
 
 export function App() {
   return (
@@ -12,6 +13,7 @@ export function App() {
           <Route index element={<HomePage />} />
           <Route path="checklist" element={<ChecklistPage />} />
           <Route path="budget" element={<BudgetPage />} />
+          <Route path="vendors" element={<VendorsPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
