@@ -10,7 +10,7 @@ export function AppLayout() {
     <div
       className={`mx-auto flex min-h-dvh max-w-lg flex-col ${isHome ? HOME_BG_CLASS : "bg-background"}`}
     >
-      <main className="flex flex-1 flex-col overflow-y-auto pb-[calc(5.5rem+env(safe-area-inset-bottom))]">
+      <main className="flex flex-1 flex-col overflow-y-auto pb-[calc(6.75rem+env(safe-area-inset-bottom))]">
         <Outlet />
       </main>
       <BottomNav />

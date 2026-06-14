@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { HOME_BG_CLASS, HOME_TEXT_CLASS } from "@/constants/colors";
+import { HOME_BG_CLASS, HOME_CARD_BG_CLASS, HOME_CARD_BORDER_CLASS, HOME_TEXT_CLASS } from "@/constants/colors";
 import { WEDDING_DATE } from "@/constants/wedding";
 import { useBudget } from "@/hooks/useBudget";
 import { useChecklist } from "@/hooks/useChecklist";
@@ -90,7 +90,7 @@ function SummaryCard({
     <button
       type="button"
       onClick={onClick}
-      className="rounded-2xl border border-[#4F4200]/10 bg-transparent px-5 py-6 text-center transition hover:border-[#4F4200]/20"
+      className={`rounded-2xl border ${HOME_CARD_BORDER_CLASS} ${HOME_CARD_BG_CLASS} px-5 py-6 text-center transition hover:border-[#E5DAA7]/80`}
     >
       <p className="text-xs uppercase tracking-widest">{label}</p>
       <p className="mt-3 font-serif text-2xl">{value}</p>
